@@ -48,7 +48,7 @@ public:
         
         map[currentKey]= (consider||notConsider);
         
-        return consider||notConsider;
+        return map[currentKey];
             
     }
     
