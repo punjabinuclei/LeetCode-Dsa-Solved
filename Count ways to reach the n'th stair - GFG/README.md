@@ -39,3 +39,5 @@ Complete the function&nbsp;<strong>countWays()</strong>&nbsp;which takes the top
 1 ≤ n ≤ 10<sup>4</sup></span></p>
  <p></p>
             </div>
+            
+            SOLVED IT 25mins
