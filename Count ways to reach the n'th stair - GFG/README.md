@@ -40,4 +40,4 @@ Complete the function&nbsp;<strong>countWays()</strong>&nbsp;which takes the top
  <p></p>
             </div>
             
-            SOLVED IT 25mins
+            SOLVED IT in 25mins
