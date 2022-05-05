@@ -1,12 +1,12 @@
 class Solution {
 public:
     int fib(int n) {
-        
-        return nthfib(n);
+        unordered_map<int,int>map;
+        return nthfib(n,map);
     }
     
     
-    int nthfib(int n)
+    int nthfib(int n,unordered_map<int,int>&map)
     {
         
     if(n==0)
@@ -15,11 +15,17 @@ public:
     if(n==1)
        return 1;
         
-        int one=nthfib(n-1);
-        int two=nthfib(n-2);
+        int currentKey=n;
         
+        if(map.find(currentKey)!=map.end())
+            return map[currentKey];
         
-        return one+two;
+        int a=nthfib(n-1,map);
+        int b=nthfib(n-2,map);
+        
+        map[currentKey]=a+b;
+        
+        return map[currentKey];
         
     }
     
