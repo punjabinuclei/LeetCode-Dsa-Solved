@@ -35,7 +35,7 @@ class Solution {
         
         map[currentKey]=(a+b)%pow;
         
-        return map[currentKey]%pow;
+        return map[currentKey];
         
         
     }
