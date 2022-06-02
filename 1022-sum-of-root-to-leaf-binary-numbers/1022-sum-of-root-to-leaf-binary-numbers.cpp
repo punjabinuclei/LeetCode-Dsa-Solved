@@ -11,30 +11,32 @@
  */
 class Solution {
 public:
-    
-     int sumRootToLeaf(TreeNode* root) {
-        int* ans=new int[1];
-        ans[0]=0;
-        rootToLeaf(root,"",ans);
+    int sumRootToLeaf(TreeNode* root) {
+     
+        vector<int>ans(1,0);
+        
+        SumToLeaf(root, ""+to_string(root->val), ans);
+        
         return ans[0];
     }
-
     
     
     
-    void rootToLeaf(TreeNode* root, string currentString,int* ans)
+    void SumToLeaf(TreeNode *root, string currentPath, vector<int>&ans)
     {
-        if(root->left== NULL && root->right==NULL)
+        if(root->left==NULL && root->right==NULL)
         {
-            currentString+=to_string(root->val);
-            ans[0]+=stoi(currentString,0,2);
+            ans[0]+=stoi(currentPath, 0, 2);
             return;
         }
-        string curr=to_string(root->val);
-        if(root->left!=NULL)
-            rootToLeaf(root->left,currentString+curr,ans);
-        if(root->right!=NULL)
-            rootToLeaf(root->right,currentString+curr,ans);
         
+        if(root->left!=NULL)
+            SumToLeaf(root->left, currentPath+to_string(root->left->val), ans);
+        
+        if(root->right!=NULL)
+            SumToLeaf(root->right, currentPath+to_string(root->right->val), ans);
+     
+        
+        return;
     }
-   };
+};
