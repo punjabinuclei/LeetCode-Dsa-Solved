@@ -32,6 +32,9 @@ class Solution
         if (root == NULL)
             return;
 
+        if(parents[0]!=-1 && parents[1]!=-1)
+            return;
+        
         if (x == root->val)
         {
             parents[0] = currentParent->val;
