@@ -21,36 +21,36 @@ public:
 class Solution {
 public:
     vector<int> preorder(Node* root) {
-        
+     
         vector<int>answer;
-        
-        preorderTraversal(root, answer);
-        
-        return answer;
-        
-    }
-    
-    
-    void preorderTraversal(Node *root, vector<int>&answer)
-    {
+        stack<Node*>stack;
         
         if(root==NULL)
-            return;
+            return answer;
         
+        stack.push(root);
         
-        answer.push_back(root->val);
-        
-        for(auto currentChild:root->children)
+        while(!stack.empty())
         {
-            preorderTraversal(currentChild, answer);
-        }
+
+            Node* currentNode=stack.top();
+            stack.pop();
+            
+            answer.push_back(currentNode->val);
+            
+            
+            for(int i=currentNode->children.size()-1;i>=0;i--)
+            {
+                stack.push(currentNode->children[i]);
+              
+            }
+      
+       }
+       
         
         
-        
-        return;
-        
+        return answer;      
     }
-    
-    
-    
 };
+
+
