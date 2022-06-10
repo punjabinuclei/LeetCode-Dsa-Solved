@@ -128,30 +128,30 @@ struct Node
 
 //Function to return a list containing elements of left view of the binary tree.
 
-void left(Node* root, int currentLvl, unordered_map<int,int>&map, vector<int>&answer)
+void left(Node* root, int currentLvl, vector<int>&answer)
 {
     if(root==NULL)
     return;
     
-    if(map.find(currentLvl)==map.end())
+    if(answer.size()==currentLvl)
     {
-        map.insert({currentLvl, root->data});
+        // map.insert({currentLvl, root->data});
         answer.push_back(root->data);
     }
     
     
-     left(root->left,currentLvl+1, map, answer);
-     left(root->right,currentLvl+1, map, answer);
+     left(root->left,currentLvl+1, answer);
+     left(root->right,currentLvl+1, answer);
  
 }
 
 
 vector<int> leftView(Node *root)
 {
-   unordered_map<int,int>map;
+//   unordered_map<int,int>map;
    vector<int>answer;
    
-   left(root,0, map, answer);
+   left(root,0, answer);
    
    return answer;
 }
