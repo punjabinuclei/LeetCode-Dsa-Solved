@@ -21,30 +21,17 @@ public:
 class Solution {
 public:
     int maxDepth(Node* root) {
-        
-        return maxHeight(root);
-    }
-    
-    int maxHeight(Node *root)
-    {
         if(root==NULL)
             return 0;
         
-        
-        
         int ans=0;
-        
-        for(auto currentChild:root->children)
+    
+        for(auto node:root->children)
         {
-            ans=max(ans, maxHeight(currentChild));
+            ;
+            ans=max(maxDepth(node), ans);         
         }
         
-        
-        return ans+1;
-        
-        
+        return 1+ans;
     }
-    
-    
-    
 };
