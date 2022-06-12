@@ -13,21 +13,22 @@ class Solution {
 public:
     bool isUnivalTree(TreeNode* root) {
         
-        return univalued(root,root->val);
+        return solution(root, root->val);
+    
     }
     
     
-    bool univalued(TreeNode* root, int val)
+    bool solution(TreeNode* root, int value)
     {
+        
         if(root==NULL)
             return true;
         
-        if(root->val!=val)
+        if(root->val!=value)
             return false;
         
-        return univalued(root->left,val) && univalued(root->right,val);
+        return solution(root->left,value) && solution(root->right, value);
+        
         
     }
-    
-    
 };
