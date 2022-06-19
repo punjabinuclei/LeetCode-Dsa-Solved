@@ -13,22 +13,26 @@ class Solution {
 public:
     bool isUnivalTree(TreeNode* root) {
         
-        return solution(root, root->val);
-    
-    }
-    
-    
-    bool solution(TreeNode* root, int value)
-    {
+        queue<TreeNode*>q;
+        int uniValue=root->val;
         
-        if(root==NULL)
-            return true;
+        q.push(root);
         
-        if(root->val!=value)
-            return false;
+        while(!q.empty())
+        {
+            TreeNode* currentNode=q.front();
+            q.pop();
+            
+            if(currentNode->val!=uniValue)
+                return false;
+            
+            if(currentNode->left!=NULL)
+                q.push(currentNode->left);
+            
+            if(currentNode->right!=NULL)
+                q.push(currentNode->right);
+        }
         
-        return solution(root->left,value) && solution(root->right, value);
-        
-        
+        return true;
     }
 };
