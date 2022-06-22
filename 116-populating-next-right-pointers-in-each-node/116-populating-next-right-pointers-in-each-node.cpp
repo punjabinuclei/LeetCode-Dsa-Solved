@@ -34,18 +34,13 @@ class Solution
             while (!q.empty())
             {
                 int qsize = q.size();
-                int qsize2 = qsize;
-                vector<Node*> lvls;
-
                 Node *prevNode=NULL;
-//                 we traverse the tree in such a way that we get tree nodes lvl by lvl in a vector at once
+                
                 for(int i=0;i<qsize;i++)
                 {
-                    
-
+                
                     Node *currentNode = q.front();
                     q.pop();
-                    lvls.push_back(currentNode);
                     
                     if(i!=0)
                         prevNode->next=currentNode;
@@ -58,15 +53,6 @@ class Solution
                     if (currentNode->right != NULL)
                         q.push(currentNode->right);
                 }
-//                 Now we will make the next node of last node as null and for other nodes the next node will be just next node
-
-                // for (int i = 0; i < qsize2; i++)
-                // {
-                //     if (i == qsize2 - 1)
-                //         lvls[i]->next = NULL;
-                //     else
-                //         lvls[i]->next = lvls[i + 1];
-                // }
             }
 
             return root;
