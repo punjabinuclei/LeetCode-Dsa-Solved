@@ -21,43 +21,54 @@ class Solution
     public:
         Node* connect(Node *root)
         {
+           	// Create a queue to store node values
 
             queue<Node*> q;
-
+           	// corner case
             if (root == NULL)
                 return root;
-            q.push(root);
+            
+              q.push(root);
 
+//             usual Bfs
             while (!q.empty())
             {
                 int qsize = q.size();
-                int qsize2=qsize;
+                int qsize2 = qsize;
                 vector<Node*> lvls;
 
-                while (qsize--) {
+                Node *prevNode=NULL;
+//                 we traverse the tree in such a way that we get tree nodes lvl by lvl in a vector at once
+                for(int i=0;i<qsize;i++)
+                {
                     
-                    Node * currentNode=q.front();
+
+                    Node *currentNode = q.front();
                     q.pop();
                     lvls.push_back(currentNode);
                     
-                    if(currentNode->left!=NULL)
-                        q.push(currentNode->left);
+                    if(i!=0)
+                        prevNode->next=currentNode;
                     
-                    if(currentNode->right!=NULL)
+                    prevNode=currentNode;
+
+                    if (currentNode->left != NULL)
+                        q.push(currentNode->left);
+
+                    if (currentNode->right != NULL)
                         q.push(currentNode->right);
                 }
-                
-                for(int i=0;i<qsize2;i++)
-                {
-                    if(i==qsize2-1)
-                        lvls[i]->next=NULL;
-                     else
-                       lvls[i]->next=lvls[i+1];     
-                    
-                 }
-                
+//                 Now we will make the next node of last node as null and for other nodes the next node will be just next node
+
+                // for (int i = 0; i < qsize2; i++)
+                // {
+                //     if (i == qsize2 - 1)
+                //         lvls[i]->next = NULL;
+                //     else
+                //         lvls[i]->next = lvls[i + 1];
+                // }
             }
-            
+
             return root;
         }
 };
