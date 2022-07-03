@@ -2,25 +2,36 @@ class Solution {
 public:
     vector<int> frequencySort(vector<int>& nums) {
      
+        priority_queue<pair<int,int>>maxHeap;
+        unordered_map<int,int>map;
         
-          map<int,int> mp;
-        for(int i=0;i<nums.size();i++){
-            mp[nums[i]]++;
+        vector<int>answer;
+        
+        for(int i=0;i<nums.size();i++)
+        {
+            map[nums[i]]++;
         }
-        priority_queue<pair<int,int>> pq;
-        for(auto it : mp){
-            pq.push({-it.second,it.first});
+        
+        
+        for(auto i=map.begin();i!=map.end();i++)
+        {
+            maxHeap.push({-i->second, i->first});
         }
-        vector<int> result;
-        while(!pq.empty()){
-            int x = pq.top().first;
-            for(int i=0;i<abs(x);i++){
-                result.push_back(pq.top().second);
+        
+        while(!maxHeap.empty())
+        {
+            int freq=maxHeap.top().first;
+            int currentValue=maxHeap.top().second;
+            
+            for(int i=0;i<abs(freq);i++)
+            {
+                answer.push_back(currentValue);
             }
-            pq.pop();
+            
+              maxHeap.pop();
+            
+          
         }
-        return result;
-    
-        
-        }
+        return answer;
+    }
 };
