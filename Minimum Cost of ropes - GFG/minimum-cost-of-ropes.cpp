@@ -10,7 +10,8 @@ class Solution
     public:
     //Function to return the minimum cost of connecting the ropes.
     long long minCost(long long arr[], long long n) {
-        
+       
+        //make a minHeap as we want to use the top two smallest values to minCost
            priority_queue<long long, vector<long long> ,greater<long long>> minH;
        
        long long cost = 0;
@@ -18,6 +19,7 @@ class Solution
            minH.push(arr[i]);
        }
        
+    //   we take the first two elememnst out and add them to cost then add their sum then push it to the min HEap again
        while(minH.size() >= 2){
            long long left = minH.top();
            minH.pop();
