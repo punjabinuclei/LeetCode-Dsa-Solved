@@ -18,7 +18,12 @@ public:
 	    
 	    while(i<=j)
 	    {
-	        swap(S[i++], S[j--]);
+	        char temp=S[i];
+	        S[i]=S[j];
+	        S[j]=temp;
+	        
+	        i++;
+	        j--;
 	    }
 	    
 	    if(s1==S)
