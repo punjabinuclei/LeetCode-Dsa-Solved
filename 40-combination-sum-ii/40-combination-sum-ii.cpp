@@ -1,34 +1,40 @@
-class Solution {
-public:
-    void solve(vector<int>& nums,int curr, int target,vector<int>&vec,set<vector<int>>&ans)
+class Solution
+{
+    public:
+        vector<vector < int>> combinationSum2(vector<int> &candidates, int target)
+        {
+            sort(candidates.begin(), candidates.end());
+
+            vector<vector < int>> ans;
+            vector<int> subset;
+
+            helper(candidates, target, ans, subset, 0);
+
+            return ans;
+        }
+
+    void helper(vector<int> &nums, int target, vector<vector< int >> &answer, vector< int > &subset, int currentIndex)
     {
-         if(target==0)
-        { 
-            ans.insert(vec);
+        if (target == 0)
+        {
+            answer.push_back(subset);
             return;
         }
-        if(curr>=nums.size())
+
+        if (currentIndex >= nums.size())
             return;
-        int currval = nums[curr];
-        
-         if(target-currval>=0)
-         {
-            vec.push_back(currval);
-            solve(nums,curr+1,target-currval,vec,ans);
-            vec.pop_back();
-         }
-        while(curr+1<nums.size() && nums[curr]==nums[curr+1]){
-            curr++;}
-        solve(nums,curr+1,target,vec,ans);
-    }
-    vector<vector<int>> combinationSum2(vector<int>& candidates, int target) {
-        set<vector<int>>ans;
-         sort(candidates.begin(),candidates.end());
-           vector<int>subset;
-        
-        solve(candidates,0,target,subset,ans);
-      //  return dp;
-        vector<vector<int>> numbers{ans.begin(), ans.end()};
-         return numbers;
+
+        if (target >= nums[currentIndex])
+        {
+            subset.push_back(nums[currentIndex]);
+            helper(nums, target - nums[currentIndex], answer, subset, currentIndex + 1);
+            subset.pop_back();
+        }
+
+        while (currentIndex < nums.size() - 1 && nums[currentIndex] == nums[currentIndex + 1])
+        {
+            currentIndex++;
+        }
+        helper(nums, target, answer, subset, currentIndex + 1);
     }
 };
