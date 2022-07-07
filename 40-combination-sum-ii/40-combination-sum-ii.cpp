@@ -27,10 +27,11 @@ class Solution
         if (target >= nums[currentIndex])
         {
             subset.push_back(nums[currentIndex]);
+            // currentIndex+1 because values can't be repeated 
             helper(nums, target - nums[currentIndex], answer, subset, currentIndex + 1);
             subset.pop_back();
         }
-
+ // To handle duplicates
         while (currentIndex < nums.size() - 1 && nums[currentIndex] == nums[currentIndex + 1])
         {
             currentIndex++;
