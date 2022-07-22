@@ -1,31 +1,25 @@
 class Solution {
 public:
     vector<int> targetIndices(vector<int>& nums, int target) {
-      
+        
         sort(nums.begin(), nums.end());
         
          vector<int>ans;
+        int first=firstPos(nums, target);
+        if(first==-1)
+            return ans;
+        int last=lastPos(nums,target);
         
-          int first=firstPos(nums, target);
-        
-                if(first==-1)
-                    return ans;
-        
-          int last=lastPos(nums,target);
-      
         for(int i=first;i<=last;i++)
         {
             ans.push_back(i);
         }
-        
-        return ans;
        
-        
+        return ans;
     }
     
     
-    
-    int firstPos(vector<int>&nums, int target)
+     int firstPos(vector<int>&nums, int target)
     {
         int start=0, end=nums.size()-1;
         int ansIndex=-1;
@@ -71,6 +65,5 @@ public:
         return ansIndex;
     }
 
-    
     
 };
