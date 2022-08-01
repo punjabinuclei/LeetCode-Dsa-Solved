@@ -14,6 +14,7 @@ public:
                 end=mid;
             else                           
                 end=end-1;//             when last element = mid element
+//             When num[mid] == num[hi], we couldn't sure the position of minimum in mid's left or right, so just let upper bound reduce one.
 
         }
         
