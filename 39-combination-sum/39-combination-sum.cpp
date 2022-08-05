@@ -1,36 +1,39 @@
-class Solution
-{
-    public:
-        vector<vector < int>> combinationSum(vector<int> &candidates, int target)
-        {
-            vector<vector< int>> answer;
-            vector<int> temp;
-            combinations(0, target, candidates, answer, temp);
-
-            return answer;
-        }
-
-    void combinations(int currentIndex, int target, vector<int> &candidates, vector< vector< int >> &answer, vector< int > &temp)
-    {
+class Solution {
+public:
+    vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
         
+        vector<vector<int>>ans;
+        vector<int>temp;
+        
+        combinations(candidates, target, 0, temp, ans);
+        
+        return ans;
+    }
+    
+    
+    void combinations(vector<int>&candidates, int target, int currentIndex, vector<int>&temp, vector<vector<int>>&ans)
+    {
         if(target==0)
         {
-            answer.push_back(temp);
+            ans.push_back(temp);
             return;
         }
+        
+        
         if(currentIndex>=candidates.size())
             return;
         
         if(candidates[currentIndex]<=target)
         {
             temp.push_back(candidates[currentIndex]);
-            combinations(currentIndex, target-candidates[currentIndex], candidates, answer, temp);
+            combinations(candidates, target-candidates[currentIndex], currentIndex, temp, ans);
             temp.pop_back();
         }
         
-            combinations(currentIndex+1, target, candidates, answer, temp);
+        combinations(candidates, target, currentIndex+1, temp, ans);
+        
+        
         
         
     }
-
 };
