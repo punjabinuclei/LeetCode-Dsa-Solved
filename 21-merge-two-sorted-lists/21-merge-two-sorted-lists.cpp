@@ -45,6 +45,8 @@ public:
             }
         }
         
+//         Now if any one of the list still has values then,
+//         we add the complete list to the resultant list
         if(p)
         {
             result->next=p;
@@ -55,7 +57,8 @@ public:
             result->next=q;
         }
         
-        
+//         the next of the dummtnode created intially is gonna be the head of the 
+//         resultant list
         return dummyNode->next;
     }
 };
