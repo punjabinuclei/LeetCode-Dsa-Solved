@@ -50,7 +50,7 @@ public:
         
         if(carry)
         {
-            ListNode *newNode=new ListNode(1);
+            ListNode *newNode=new ListNode(carry);
             resultant->next=newNode;
             resultant=newNode;
             
