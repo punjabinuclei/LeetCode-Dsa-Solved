@@ -12,6 +12,9 @@ class Solution {
 public:
     bool isPalindrome(ListNode* head) {
         
+        if(head==NULL || head->next==NULL)
+            return true;
+        
         ListNode *middle_ptr=middleofList(head);
         ListNode *rightHalf=middle_ptr->next;
         middle_ptr->next=NULL;
