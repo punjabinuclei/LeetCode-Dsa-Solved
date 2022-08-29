@@ -2,6 +2,11 @@ class Solution {
 public:
     int findJudge(int n, vector<vector<int>>& trust) {
         
+        //this condition is to check if given input is empty but n==1
+		
+		if(trust.empty() && n==1)
+            return 1;
+        
         vector<int>inDegree(n+1,0);
         vector<int>outDegree(n+1,0);
         
