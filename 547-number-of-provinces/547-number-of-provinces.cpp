@@ -23,6 +23,7 @@ public:
         
         visited[currentVertex]=true;
         
+//         Gives Row Value
         vector<int>currentCity=isConnected[currentVertex];
     
         for(int i=0;i<isConnected.size();i++) {
