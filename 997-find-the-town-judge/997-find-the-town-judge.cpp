@@ -2,33 +2,29 @@ class Solution {
 public:
     int findJudge(int n, vector<vector<int>>& trust) {
         
-        //this condition is to check if given input is empty but n==1
-		
-		if(trust.empty() && n==1)
+        if(n==1 && trust.size()==0)
             return 1;
         
-        vector<int>inDegree(n+1,0);
-        vector<int>outDegree(n+1,0);
+        vector<int>inDegree(n+1);
+        vector<int>outDegree(n+1);
         
-        for(auto currentTrust:trust)
+        for(auto currentGroup:trust)
         {
-            int a=currentTrust[0];
-            int b=currentTrust[1];
+            int a=currentGroup[0];
+            int b=currentGroup[1];
             
-            inDegree[b]++;
-            outDegree[a]++;
+            inDegree[b]+=1;
+            outDegree[a]+=1;
         }
         
-        for(int currentPeople=1;currentPeople<=n;currentPeople++)
+        
+        for(int i=0;i<=n;i++)
         {
-            if(inDegree[currentPeople]==n-1 && outDegree[currentPeople]==0)
-            {
-                return currentPeople;
-            }
+            if(inDegree[i]==n-1 && outDegree[i]==0)
+                return i;
         }
         
         
         return -1;
     }
-    
 };
