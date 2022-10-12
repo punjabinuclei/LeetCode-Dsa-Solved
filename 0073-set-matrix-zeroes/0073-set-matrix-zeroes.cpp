@@ -2,32 +2,17 @@ class Solution {
 public:
     
     
-    void makeZero(vector<vector<int>>&matrix, int rowVal, int colVal, int rowSize, int colSize)
-    {
-        for(int i=0;i<colSize;i++)
-        {
-            if(matrix[rowVal][i])
-            {
-                matrix[rowVal][i]=-99;
-            }
-        }
-        
-        
-        
-        for(int i=0;i<rowSize;i++)
-        {
-            if(matrix[i][colVal])
-            {
-                matrix[i][colVal]=-99;
-            }
-        }
-        
-        
-    }
     
     void setZeroes(vector<vector<int>>& matrix) {
+        
         int rowSize=matrix.size();
         int colSize=matrix[0].size();
+    
+        vector<int>rowMatrix(rowSize, -99);
+        vector<int>colMatrix(colSize, -99);
+        
+        
+        
         
         for(int i=0;i<rowSize;i++)
         {
@@ -35,7 +20,8 @@ public:
             {
                 if(matrix[i][j]==0)
                 {
-                    makeZero(matrix, i, j, rowSize, colSize);
+                    rowMatrix[i]=0;
+                    colMatrix[j]=0;
                 }
             }
         }
@@ -45,7 +31,7 @@ public:
         {
             for(int j=0;j<colSize;j++)
             {
-                if(matrix[i][j]==-99)
+                if(rowMatrix[i]==0|| colMatrix[j]==0)
                 {
                     matrix[i][j]=0;
                 }
