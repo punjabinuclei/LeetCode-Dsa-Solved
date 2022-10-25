@@ -1,10 +1,10 @@
-// { Driver Code Starts
+//{ Driver Code Starts
 //Initial template for C++
 
 #include <bits/stdc++.h>
 using namespace std;
 
- // } Driver Code Ends
+// } Driver Code Ends
 //User function template in C++
 
 class Solution{
@@ -14,26 +14,23 @@ class Solution{
         
         unordered_map<int,int>map;
         
-        
         for(int i=0;i<n;i++)
         {
-            map.insert({a[i], i});
+            map[a[i]]++;
         }
-    
-    
+        
         for(int i=0;i<m;i++)
         {
-            map.insert({b[i], i});
+            map[b[i]]++;
         }
+        
         
         
         return map.size();
-        
-        
     }
 };
 
-// { Driver Code Starts.
+//{ Driver Code Starts.
 
 int main() {
 	
@@ -57,4 +54,5 @@ int main() {
 	}
 	
 	return 0;
-}  // } Driver Code Ends
+}
+// } Driver Code Ends
