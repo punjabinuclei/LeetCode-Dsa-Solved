@@ -1,11 +1,11 @@
-// { Driver Code Starts
+//{ Driver Code Starts
 //Initial Template for C++
 
 #include <bits/stdc++.h>
 using namespace std;
 
 
- // } Driver Code Ends
+// } Driver Code Ends
 /*You are required to complete this function*/
 
 class Solution{
@@ -15,31 +15,29 @@ class Solution{
         unordered_map<int,int>map;
         
         int prefixSum=0;
-        int answer=0;
+        int ans=0;
         
-        map.insert({prefixSum, -1});
+        map.insert({prefixSum,-1});
         
         for(int i=0;i<n;i++)
         {
             prefixSum+=A[i];
-            
-            
             if(map.find(prefixSum)!=map.end())
             {
-                answer=max(answer, i-map[prefixSum]);
+                ans=max(i-map[prefixSum],ans);
             }
-            else
-            {
-                map.insert({prefixSum, i});
-            }
+            
+            map.insert({prefixSum,i});
+            
         }
         
-        return answer;
+        
+        return ans;
     }
 };
 
 
-// { Driver Code Starts.
+//{ Driver Code Starts.
 
 int main()
 {
@@ -60,4 +58,5 @@ int main()
 }
 
 
-  // } Driver Code Ends
+
+// } Driver Code Ends
