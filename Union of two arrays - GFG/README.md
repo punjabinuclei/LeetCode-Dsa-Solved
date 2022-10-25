@@ -1,7 +1,6 @@
 # Union of two arrays
 ## Easy
-<div class="problem-statement">
-                <p></p><p><span style="font-size:18px">Given two arrays <strong>a[]</strong>&nbsp;and <strong>b[]</strong>&nbsp;of size <strong>n</strong>&nbsp;and <strong>m</strong> respectively. The task is to find union between these two arrays. </span></p>
+<div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Given two arrays <strong>a[]</strong>&nbsp;and <strong>b[]</strong>&nbsp;of size <strong>n</strong>&nbsp;and <strong>m</strong> respectively. The task is to find union between these two arrays. </span></p>
 
 <p><span style="font-size:18px">Union of the two arrays can be defined as the set containing distinct elements from both the arrays. If there are repetitions, then only one occurrence of element should be printed in the union.</span></p>
 
@@ -39,7 +38,8 @@ union set of both arrays. So count is 7.</span></pre>
 <span style="font-size:18px">1 ≤ n, m&nbsp;≤ 10<sup>5</sup><br>
 0 ≤ a[i], b[i] &lt;&nbsp;10<sup>5</sup></span></p>
 
+<p><strong><span style="font-size:18px">Elements are not necessarily distinct.</span></strong></p>
+
 <p><span style="font-size:18px"><strong>Expected Time Complexity </strong>: O((n+m)log(n+m))<br>
 <strong>Expected Auxilliary Space</strong> : O(n+m)</span></p>
- <p></p>
-            </div>
+</div>
