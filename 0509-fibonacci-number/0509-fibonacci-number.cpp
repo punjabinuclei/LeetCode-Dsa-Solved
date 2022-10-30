@@ -2,28 +2,23 @@ class Solution {
 public:
     int fib(int n) {
         
-        unordered_map<int,int>map;
-        return nthfib(n,map);
-    }
-    
-    int nthfib(int n, unordered_map<int,int>&map)
-    {
-        if(n==1)
-            return 1;
-        if(n==0)
-            return 0;
+      vector<int>dp(n+1);
         
-        int currentKey=n;
+        if(n<=1)
+            return n;
         
-        if(map.find(currentKey)!=map.end())
+         dp[0]=0;
+         dp[1]=1;
+        
+        for(int i=2;i<=n;i++)          
         {
-            return map[currentKey];
+            dp[i]=dp[i-1] + dp[i-2];
         }
         
-        int a=nthfib(n-1, map);
-        int b=nthfib(n-2, map);
+        return dp[n];
         
-        return map[currentKey]=a+b;
+        
+        
     }
     
 };
