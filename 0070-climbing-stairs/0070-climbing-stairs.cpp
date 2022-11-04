@@ -1,29 +1,19 @@
 class Solution {
 public:
     int climbStairs(int n) {
-        unordered_map<int,int>map;
         
-        return totalWays(0,n,map);
-    }
-    
-    
-    int totalWays(int currentStep, int targetStep, unordered_map<int,int>&map)
-    {
-        if(currentStep==targetStep)
+        if(n<=1)
             return 1;
+        vector<int>dp(n+1, -1);
         
-        if(currentStep>targetStep)
-            return 0;
+        dp[0]=1;
+        dp[1]=1;
         
-        int currentKey=currentStep;
+        for(int i=2;i<n+1;i++)
+        {
+            dp[i]=dp[i-1]+dp[i-2];
+        }
         
-        if(map.find(currentKey)!=map.end())
-            return map[currentKey];
-        
-        int oneStep=totalWays(currentStep+1, targetStep, map);
-        int twoSteps=totalWays(currentStep+2, targetStep, map);
-        
-        return map[currentKey]=oneStep+twoSteps;
-            
+        return dp[n];
     }
 };
