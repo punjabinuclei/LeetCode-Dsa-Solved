@@ -22,6 +22,8 @@ public:
             return 0;
         
         int lh=maxDepth(root->left);
+//         In checkBalanced function, you should check ans again after call line int leftSubTree = checkBalance(root->left);.
+// if the left-sub-tree was not balanced the whole tree was balanced too so we don't need to traversal the right-sub-tree anymore.
         if(lh==-1)
             return -1;
         int rh=maxDepth(root->right);
