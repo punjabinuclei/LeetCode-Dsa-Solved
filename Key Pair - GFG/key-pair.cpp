@@ -15,16 +15,13 @@ public:
 	    
 	    for(int i=0;i<n;i++)
 	    {
-	        int k=x-arr[i];
-	        if(map.find(k)!=map.end())
+	        if(map.find(x-arr[i])!=map.end())
 	        {
 	            return true;
 	        }
-	        else
-	        {
-	            map[arr[i]]=i;
-	        }
+	        map[arr[i]]=i;
 	    }
+	    
 	    
 	    return false;
 	}
