@@ -8,8 +8,8 @@ class Solution{
     // your task is to complete this function
     int maxDistance(int arr[], int n)
     {
-int maxDist=0;
         unordered_map<int,int>map;
+        int maxVal=0;
         
         for(int i=0;i<n;i++)
         {
@@ -19,12 +19,15 @@ int maxDist=0;
             }
             else
             {
-                int diff=i-map[arr[i]];
-                maxDist=max(diff, maxDist);
+                int temp=abs(map[arr[i]]-i);
+                if(temp>maxVal)
+                {
+                    maxVal=temp;
+                }
             }
         }
-
-return maxDist;
+    
+        return maxVal;
     }
 };
 
