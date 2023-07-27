@@ -1,4 +1,4 @@
-// { Driver Code Starts
+//{ Driver Code Starts
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -24,6 +24,7 @@ int main() {
     }
     return 0;
 }
+
 // } Driver Code Ends
 
 
@@ -31,17 +32,26 @@ string isSubset(int a1[], int a2[], int n, int m) {
  
  unordered_map<int,int>map;
  
- for(int i=0;i<n;i++)
- {
-     map[a1[i]]++;
- }
  
- for(int i=0;i<m;i++)
- {
-     if(map[a2[i]]==0)
-     return "No";
- }
+     for(int i=0;i<n;i++)
+     {
+         map[a1[i]]++;
+     }
+     
+     
+     
+     for(int i=0;i<m;i++)
+     {
+         if(map.find(a2[i])!=map.end() && map[a2[i]]>0)
+         {
+             map[a2[i]]--;
+         }
+         else
+         {
+             return "No";
+         }
+     }
  
- return "Yes";
  
+    return "Yes";
 }
