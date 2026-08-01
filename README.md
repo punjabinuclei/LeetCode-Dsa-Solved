@@ -14,9 +14,18 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Array
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0128-longest-consecutive-sequence](https://github.com/punjabinuclei/LeetCode-Dsa-Solved/tree/main/0128-longest-consecutive-sequence/) | Medium |
 | [1480-running-sum-of-1d-array](https://github.com/punjabinuclei/LeetCode-Dsa-Solved/tree/main/1480-running-sum-of-1d-array/) | Easy |
 ## Prefix Sum
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [1480-running-sum-of-1d-array](https://github.com/punjabinuclei/LeetCode-Dsa-Solved/tree/main/1480-running-sum-of-1d-array/) | Easy |
+## Hash Table
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0128-longest-consecutive-sequence](https://github.com/punjabinuclei/LeetCode-Dsa-Solved/tree/main/0128-longest-consecutive-sequence/) | Medium |
+## Union-Find
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0128-longest-consecutive-sequence](https://github.com/punjabinuclei/LeetCode-Dsa-Solved/tree/main/0128-longest-consecutive-sequence/) | Medium |
 <!---LeetCode Topics End-->
