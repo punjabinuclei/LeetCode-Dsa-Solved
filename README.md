@@ -14,6 +14,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Array
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0001-two-sum](https://github.com/punjabinuclei/LeetCode-Dsa-Solved/tree/main/0001-two-sum/) | Easy |
 | [0128-longest-consecutive-sequence](https://github.com/punjabinuclei/LeetCode-Dsa-Solved/tree/main/0128-longest-consecutive-sequence/) | Medium |
 | [1480-running-sum-of-1d-array](https://github.com/punjabinuclei/LeetCode-Dsa-Solved/tree/main/1480-running-sum-of-1d-array/) | Easy |
 ## Prefix Sum
@@ -23,6 +24,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Hash Table
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0001-two-sum](https://github.com/punjabinuclei/LeetCode-Dsa-Solved/tree/main/0001-two-sum/) | Easy |
 | [0128-longest-consecutive-sequence](https://github.com/punjabinuclei/LeetCode-Dsa-Solved/tree/main/0128-longest-consecutive-sequence/) | Medium |
 ## Union-Find
 | Problem Name | Difficulty |
