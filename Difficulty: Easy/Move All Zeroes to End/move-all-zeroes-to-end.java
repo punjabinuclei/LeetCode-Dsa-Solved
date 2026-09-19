@@ -1,25 +1,33 @@
 class Solution {
     void pushZerosToEnd(int[] arr) {
         
-        ArrayList<Integer>store=new ArrayList<>();
         
-        for(int x:arr)
+        int j=-1;
+        
+        for(int i=0;i<arr.length;i++)
         {
-            if(x!=0)
+            if(arr[i]==0)
             {
-                store.add(x);
+                j=i;
+                break;
+            }
+        }
+        
+        if(j==-1)
+            return;
+            
+            
+        for(int i=j+1;i<arr.length;i++)
+        {
+            if(arr[i]!=0)
+            {
+                int x=arr[i];
+                arr[i]=arr[j];
+                arr[j]=x;
+                j++;
             }
         }
         
         
-        for(int i=0;i<store.size();i++)
-        {
-            arr[i]=store.get(i);
-        }
-        
-        for(int i=store.size();i<arr.length;i++)
-        {
-            arr[i]=0;
-        }
     }
 }
